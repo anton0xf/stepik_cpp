@@ -6,18 +6,10 @@ int count_inv(int n, long long a[], int i1, int i2) {
     if (i1 > i2) swap(i1, i2);
     // now i1 < i2
     int inv = 0;
-    if (i1 > 0) {
-        inv += a[i1-1] > a[i1];
-    }
-    if (i2 == i1 + 1) {
-        inv += a[i1] > a[i2];
-    } else {
-        inv += a[i1] > a[i1+1];
-        inv += a[i2-1] > a[i2];
-    }
-    if (i2 < n-1) {
-        inv += a[i2] > a[i2+1];
-    }
+    inv += (i1 > 0) && (a[i1-1] > a[i1]);
+    inv += a[i1] > a[i1+1];
+    inv += (i2-1 > i1) && (a[i2-1] > a[i2]);
+    inv += (i2+1 < n) && (a[i2] > a[i2+1]);
     return inv;
 }
 
