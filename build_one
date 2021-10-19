@@ -1,0 +1,14 @@
+#!/bin/sh
+SRC="$1"
+OUT="$2"
+OUT_DIR="$(dirname "$OUT")"
+
+# create outdir if not exists
+[ -d "$OUT_DIR" ] || mkdir -p "$OUT_DIR"
+
+# simulate make behaviour:
+# rebuild out if it is not exists or older than source
+if [ ! -e "$OUT" ] || [ "$SRC" -nt "$OUT" ]; then
+    set -ex
+    g++ -Wall "$SRC" -o "$OUT"
+fi

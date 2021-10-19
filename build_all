@@ -1,0 +1,8 @@
+#!/bin/sh
+. ./env
+set -e
+./list_src | while read SRC; do
+    # Is this sed expression works for every case?
+    OUT="$OUT_DIR/$(echo "$SRC" | sed 's|/|__|g; s/\.cpp$//')"
+    ./build_one "$SRC" "$OUT"
+done
