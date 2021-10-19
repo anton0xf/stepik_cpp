@@ -15,7 +15,7 @@ int count_inv(int n, long long a[], int i1, int i2) {
 
 int main() {
     int n, q; cin >> n >> q;
-    long long a[n];
+    long long *a = new long long[n];
     for (int i=0; i<n; i++) {
         cin >> a[i];
     }
@@ -35,4 +35,5 @@ int main() {
         }
         cout << (inv == 0 ? "Sorted!" : "Unsorted!") << endl;
     }
+    delete a;
 }
