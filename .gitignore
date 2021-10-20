@@ -2,3 +2,5 @@
 !.gitignore
 !.gitattributes
 /build/
+TAGS
+/meson/
