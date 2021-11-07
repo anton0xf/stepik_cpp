@@ -9,5 +9,8 @@ foreach src_bin : srcs_bins
   sb = src_bin.split('\t')
   src = sb[0]
   bin = sb[1]
-  executable(bin, src, install: true)
+  ex = executable(bin, src, install: true)
+  if bin.endswith('.test')
+    test(src, ex)
+  endif
 endforeach
