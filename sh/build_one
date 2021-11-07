@@ -2,6 +2,7 @@
 SRC="$1"
 OUT="$2"
 OUT_DIR="$(dirname "$OUT")"
+CC="$(./sh/select_compiler "$SRC")"
 
 # create outdir if not exists
 [ -d "$OUT_DIR" ] || mkdir -p "$OUT_DIR"
@@ -11,5 +12,5 @@ OUT_DIR="$(dirname "$OUT")"
 if [ ! -e "$OUT" ] || [ "$SRC" -nt "$OUT" ] || ./sh/has_new_deps "$SRC" "$OUT"
 then
     set -ex
-    g++ -Wall "$SRC" -o "$OUT"
+    "$CC" -Wall "$SRC" -o "$OUT"
 fi

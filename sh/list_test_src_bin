@@ -1,2 +1,2 @@
 #!/bin/sh
-./sh/list_src | egrep '\.test\.cpp$' | ./sh/add_bin_to_src
+./sh/list_src | egrep '\.test\.c(pp)?$' | ./sh/add_bin_to_src

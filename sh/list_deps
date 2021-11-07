@@ -1,2 +1,4 @@
 #!/bin/sh
-g++ -MM "$1" | cut -d' ' -f3
+SRC="$1"
+CC="$(./sh/select_compiler "$SRC")"
+"$CC" -MM "$SRC" | cut -d' ' -f3

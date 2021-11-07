@@ -1,0 +1,7 @@
+#!/bin/sh
+SRC="$1"
+case "$SRC" in
+    *.cpp) echo "g++" ;;
+    *.c) echo "gcc" ;;
+    *) exit 1 ;;
+esac
