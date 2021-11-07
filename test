@@ -3,8 +3,7 @@
 set -e
 ./build_all
 IFS="$(printf '\t')"
-./list_src | egrep '\.test\.cpp$' | ./add_bin_to_src | while read SRC BIN
-do
+./list_test_src_bin | while read SRC BIN; do
     echo "test $SRC"
     "./$OUT_DIR/$BIN"
 done
