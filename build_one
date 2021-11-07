@@ -8,7 +8,7 @@ OUT_DIR="$(dirname "$OUT")"
 
 # simulate make behaviour:
 # rebuild out if it is not exists or older than source
-if [ ! -e "$OUT" ] || [ "$SRC" -nt "$OUT" ]; then
+if [ ! -e "$OUT" ] || [ "$SRC" -nt "$OUT" ] || ./has_new_deps "$SRC" "$OUT"; then
     set -ex
     g++ -Wall "$SRC" -o "$OUT"
 fi
