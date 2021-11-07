@@ -1,0 +1,2 @@
+#!/bin/sh
+./sh/list_src | ./sh/add_bin_to_src

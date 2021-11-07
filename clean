@@ -1,3 +1,2 @@
 #!/bin/sh
-. ./env
-rm -rfv "$OUT_DIR"
+./sh/clean

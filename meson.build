@@ -4,7 +4,7 @@ project('stepik_cpp', 'cpp',
   version : '0.1',
   default_options : ['warning_level=3', 'cpp_std=c++14'])
 
-srcs_bins = run_command('./list_src_bin').stdout().strip().split('\n')
+srcs_bins = run_command('./sh/list_src_bin').stdout().strip().split('\n')
 foreach src_bin : srcs_bins
   sb = src_bin.split('\t')
   src = sb[0]

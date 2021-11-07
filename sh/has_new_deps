@@ -2,7 +2,7 @@
 SRC="$1"
 OUT="$2"
 
-for DEP in $(./list_deps "$SRC"); do
+for DEP in $(./sh/list_deps "$SRC"); do
     if [ "$DEP" -nt "$OUT" ]; then
         exit 0
     fi

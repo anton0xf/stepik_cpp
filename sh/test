@@ -1,0 +1,9 @@
+#!/bin/sh
+. ./env
+set -e
+./sh/build_all
+IFS="$(printf '\t')"
+./sh/list_test_src_bin | while read SRC BIN; do
+    echo "test $SRC"
+    "./$OUT_DIR/$BIN"
+done

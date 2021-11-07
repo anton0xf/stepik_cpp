@@ -1,0 +1,2 @@
+#!/bin/sh
+./sh/list_src | egrep '\.test\.cpp$' | ./sh/add_bin_to_src
