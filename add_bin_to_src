@@ -1,0 +1,6 @@
+#!/bin/sh
+while read SRC; do
+    # Is this sed expression works for every case?
+    BIN="$(echo "$SRC" | sed 's|/|__|g; s/\.cpp$//')"
+    printf '%s\t%s\n' "$SRC" "$BIN"
+done
