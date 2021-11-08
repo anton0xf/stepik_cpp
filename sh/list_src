@@ -1,2 +1,2 @@
 #!/bin/sh
-find . -not \( -path ./meson -prune \) -iname '*.cpp' -o -iname '*.c' | sed 's|^\./||' | sort
+find . -not \( -path ./meson -prune \) -and \( -iname '*.cpp' -o -iname '*.c' \) | sed 's|^\./||' | sort
